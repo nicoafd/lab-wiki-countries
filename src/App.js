@@ -1,23 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
+import CountriesList from './Components/CountriesList';
+import Navbar from './Components/Navbar';
+import { Switch } from 'react-router';
+import { Route } from 'react-router';
+import CountryDetails from './Components/CountryDetails';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+    <Navbar/>
+
+    <CountriesList />
+
+    <Switch>
+    <Route path="/country/:cca3" render={(routeProps) => <CountryDetails {...routeProps}/>} />
+    </Switch>
     </div>
   );
 }
