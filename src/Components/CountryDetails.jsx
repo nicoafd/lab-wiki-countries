@@ -38,6 +38,7 @@ export default class CountryDetails extends Component {
 
         <p>{this.state.country && this.state.country.capital}</p>
         <p>{this.state.country && this.state.country.area}</p>
+        <p>{this.state.country && this.state.country.borders}</p>
       </div>
     );
   }
